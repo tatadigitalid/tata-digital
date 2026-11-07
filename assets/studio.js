@@ -8,17 +8,6 @@ function switchHeroDevice(mode) {
   document.getElementById('btn-dev-mobile').setAttribute('aria-pressed', compact);
 }
 
-// Portfolio investment calculator
-function updateCalculator(val) {
-  const num = parseInt(val, 10);
-  const formatted = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(num);
-  document.getElementById('calc-val-display').textContent = formatted;
-  
-  const roi = Math.round((num - 75000) / 75000);
-  document.getElementById('calc-roi-display').textContent = `${roi}x Lipat (${roi * 100}%)`;
-}
-
-
 // Catalogue filtering and search
 let currentCategory = 'Semua', searchQuery = '';
 
@@ -83,17 +72,16 @@ function applyFilters() {
 const previewDialog = document.getElementById('preview-modal');
 
 // Preview dialog
-function openPreviewModal(title, imageSrc, category, price, description) {
+function openPreviewModal(title, imageSrc, category, description) {
   document.getElementById('modal-title').textContent = title;
   document.getElementById('modal-badge').textContent = category;
   const image = document.getElementById('modal-image');
   image.src = imageSrc;
   image.alt = `Pratinjau desain ${title}`;
-  document.getElementById('modal-price').textContent = price;
   document.getElementById('modal-desc').textContent = description;
 
-  const waMessage = encodeURIComponent(`Halo Tata Digital, saya tertarik memesan template portofolio "${title}" (${price}). Boleh minta info pengerjaannya?`);
-  document.getElementById('modal-order-btn').href = `https://wa.me/6285126461085?text=${waMessage}`;
+  const waMessage = encodeURIComponent(`Halo Tata Digital, saya tertarik dengan desain portofolio "${title}". Bisa kita diskusikan untuk proyek saya?`);
+  document.getElementById('modal-contact-btn').href = `https://wa.me/6285126461085?text=${waMessage}`;
   previewDialog.showModal();
   document.body.style.overflow = 'hidden';
 }
@@ -118,5 +106,5 @@ if ('IntersectionObserver' in window && !reduceMotion.matches) {
     }
   }, { threshold: 0.12 });
 
-  document.querySelectorAll('.studio-service-grid article, .catalog-grid-pattern h2, .theme-card, #alur-kerja h2, #harga h2').forEach((item) => observer.observe(item));
+  document.querySelectorAll('.studio-service-grid article, .catalog-grid-pattern h2, .theme-card, #alur-kerja h2, #tentang h2, #kontak h2').forEach((item) => observer.observe(item));
 }

@@ -100,8 +100,6 @@ a, button, summary, input { -webkit-tap-highlight-color: #22e3a63d; }
 .studio-intro h1 em { font-style: normal; color: #126580; }
 .studio-lead { font-size: clamp(1rem, 1.5vw, 1.125rem); line-height: 1.72; color: var(--muted); max-width: 33rem; }
 .studio-actions { display: flex; flex-wrap: wrap; gap: .65rem; margin-top: 1.65rem; }
-.studio-meta { display: flex; flex-wrap: wrap; gap: .35rem 1.25rem; margin-top: 1.6rem; padding-top: 1rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .81rem; }
-.studio-meta strong { color: var(--navy); }
 
 .studio-showcase {
   position: relative;
@@ -157,12 +155,10 @@ a, button, summary, input { -webkit-tap-highlight-color: #22e3a63d; }
 #theme-search { min-height: 2.75rem; font-size: .875rem; }
 #theme-search + svg { top: .85rem; }
 #clear-search { top: 0; right: 0; width: 2.75rem; height: 2.75rem; }
-#perbandingan, #kalkulator, #harga { background: var(--paper); }
 #alur-kerja .grid > div { border-color: var(--line); background: #f5f8ff; }
 #alur-kerja .grid > div:nth-child(2) { background: #e8f6fe; }
 #alur-kerja .grid > div:nth-child(3) { background: #e7f8f1; }
 #alur-kerja .grid > div > div:first-child { color: #176477; }
-#calc-range { accent-color: #176477; }
 .studio-footer { background: var(--navy); }
 .studio-footer p, .studio-footer ul, .studio-footer h4, .studio-footer .border-t { color: #bdcfe1; }
 .studio-footer :focus-visible { outline-color: var(--mint); }
