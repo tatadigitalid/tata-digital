@@ -1,5 +1,13 @@
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
+function switchHeroDevice(mode) {
+  const compact = mode === 'mobile';
+  document.getElementById('hero-device-wrapper').classList.toggle('is-compact', compact);
+  document.getElementById('active-device-label').textContent = compact ? 'Tampilan ringkas' : 'Tampilan lebar';
+  document.getElementById('btn-dev-desktop').setAttribute('aria-pressed', !compact);
+  document.getElementById('btn-dev-mobile').setAttribute('aria-pressed', compact);
+}
+
 // Catalogue filtering and search
 let currentCategory = 'Semua', searchQuery = '';
 
@@ -87,22 +95,6 @@ previewDialog?.addEventListener('click', (event) => {
 });
 previewDialog?.addEventListener('close', () => {
   document.body.style.removeProperty('overflow');
-});
-
-const serviceMenu = document.querySelector('.studio-service-menu');
-
-serviceMenu?.addEventListener('click', (event) => {
-  if (event.target.closest('a')) serviceMenu.open = false;
-});
-
-document.addEventListener('click', (event) => {
-  if (serviceMenu?.open && !serviceMenu.contains(event.target)) serviceMenu.open = false;
-});
-
-serviceMenu?.addEventListener('keydown', (event) => {
-  if (event.key !== 'Escape' || !serviceMenu.open) return;
-  serviceMenu.open = false;
-  serviceMenu.querySelector('summary').focus();
 });
 
 if ('IntersectionObserver' in window && !reduceMotion.matches) {

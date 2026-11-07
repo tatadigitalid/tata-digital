@@ -46,7 +46,7 @@
     }
   </script>
 
-  <link rel="stylesheet" href="../assets/studio.css?v=solusi-digital">
+  <link rel="stylesheet" href="../assets/studio.css?v=layanan">
 </head>
 
 <body class="bg-white text-zinc-900 font-sans antialiased selection:bg-teal-100 selection:text-brand-primary">
@@ -59,26 +59,7 @@
       </a>
       <nav aria-label="Navigasi utama">
         <a href="../#tentang">Tentang</a>
-        <details class="studio-service-menu">
-          <summary>Layanan <span aria-hidden="true">⌄</span></summary>
-          <div class="studio-service-panel">
-            <div class="studio-service-menu-links">
-            <a href="../#layanan-website">Website Development</a>
-            <a href="../#layanan-mobile">Mobile Development</a>
-            <a href="../#layanan-software">Custom Software</a>
-            <a href="../#layanan-mvp">MVP Development</a>
-            <a href="../#layanan-ui-ux">UI/UX Design</a>
-            <a href="../#layanan-otomasi">AI &amp; Automasi</a>
-            <a href="../#layanan-spesifikasi">Spesifikasi Produk</a>
-            <a href="../#layanan-branding">Branding Digital</a>
-            <a href="../#layanan-perawatan">Maintenance</a>
-            </div>
-            <div class="studio-service-menu-aside">
-              <p>Solusi untuk kebutuhanmu</p>
-              <a href="../#layanan">Jelajahi semua layanan <span aria-hidden="true">↗</span></a>
-            </div>
-          </div>
-        </details>
+        <a href="../layanan/">Layanan</a>
         <a href="./" aria-current="page">Portofolio</a>
         <a href="../#alur-kerja">Cara Kerja</a>
         <a href="../#faq">FAQ</a>
@@ -152,7 +133,7 @@
       <div id="theme-cards-container" class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-14">
         
         <!-- CARD 1 -->
-        <div class="theme-card group flex flex-col gap-4" data-category="Minimalism" data-title="El Designer">
+        <div id="el-designer" class="theme-card group flex flex-col gap-4" data-category="Minimalism" data-title="El Designer">
           <div class="relative aspect-[4/3] bg-zinc-100 overflow-hidden ring-1 ring-zinc-200 rounded-xl transition-all duration-300 shadow-card hover:shadow-card-hover">
             <div class="card-preview absolute inset-x-0 bottom-0 z-20 flex justify-end p-3">
               <button type="button" onclick="openPreviewModal('El Designer', '../assets/el-designer.png', 'Minimalism', 'Desain portofolio minimalis berkelas tinggi untuk desainer grafis, UI/UX, dan creative artist.')" class="px-4 py-2 bg-white text-zinc-950 text-xs font-bold rounded-lg shadow-lg hover:bg-brand-primary hover:text-white transition-all">
@@ -170,7 +151,7 @@
         </div>
 
         <!-- CARD 2 -->
-        <div class="theme-card group flex flex-col gap-4" data-category="Playful" data-title="Green Pink Brave">
+        <div id="green-pink-brave" class="theme-card group flex flex-col gap-4" data-category="Playful" data-title="Green Pink Brave">
           <div class="relative aspect-[4/3] bg-zinc-100 overflow-hidden ring-1 ring-zinc-200 rounded-xl transition-all duration-300 shadow-card hover:shadow-card-hover">
             <div class="card-preview absolute inset-x-0 bottom-0 z-20 flex justify-end p-3">
               <button type="button" onclick="openPreviewModal('Green Pink Brave', '../assets/green-pink-brave.png', 'Playful', 'Desain berani, ceria, dan penuh energi. Cocok untuk ilustrator, content creator, dan desainer visual yang ingin tampil beda.')" class="px-4 py-2 bg-white text-zinc-950 text-xs font-bold rounded-lg shadow-lg hover:bg-brand-primary hover:text-white transition-all">
@@ -224,7 +205,7 @@
         </div>
 
         <!-- CARD 5 -->
-        <div class="theme-card group flex flex-col gap-4" data-category="Retro Playful" data-title="Retro Playful">
+        <div id="retro-playful" class="theme-card group flex flex-col gap-4" data-category="Retro Playful" data-title="Retro Playful">
           <div class="relative aspect-[4/3] bg-zinc-100 overflow-hidden ring-1 ring-zinc-200 rounded-xl transition-all duration-300 shadow-card hover:shadow-card-hover">
             <div class="card-preview absolute inset-x-0 bottom-0 z-20 flex justify-end p-3">
               <button type="button" onclick="openPreviewModal('Retro Playful', '../assets/retro-playful.png', 'Retro', 'Aksen retro 90-an yang unik dengan badge interaktif. Cocok untuk game developer, animasi, dan motion designer.')" class="px-4 py-2 bg-white text-zinc-950 text-xs font-bold rounded-lg shadow-lg hover:bg-brand-primary hover:text-white transition-all">
@@ -293,7 +274,7 @@
           <h4 class="font-mono text-xs uppercase font-bold tracking-wider text-zinc-400 mb-4">Jelajahi TataDigital</h4>
           <ul class="space-y-2.5 text-xs text-zinc-400">
             <li><a href="../#tentang" class="hover:text-white transition-colors">Tentang kami</a></li>
-            <li><a href="../#layanan" class="hover:text-white transition-colors">Layanan</a></li>
+            <li><a href="../layanan/" class="hover:text-white transition-colors">Layanan</a></li>
             <li><a href="./" class="hover:text-white transition-colors">Portofolio</a></li>
           </ul>
         </div>
@@ -353,6 +334,6 @@
     </div>
   </dialog>
 
-  <script src="../assets/studio.js?v=solusi-digital" defer></script>
+  <script src="../assets/studio.js?v=layanan" defer></script>
 </body>
 </html>
