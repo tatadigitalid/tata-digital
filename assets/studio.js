@@ -1,13 +1,5 @@
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-function switchHeroDevice(mode) {
-  const compact = mode === 'mobile';
-  document.getElementById('hero-device-wrapper').classList.toggle('is-compact', compact);
-  document.getElementById('active-device-label').textContent = compact ? 'Tampilan ringkas' : 'Tampilan lebar';
-  document.getElementById('btn-dev-desktop').setAttribute('aria-pressed', !compact);
-  document.getElementById('btn-dev-mobile').setAttribute('aria-pressed', compact);
-}
-
 // Catalogue filtering and search
 let currentCategory = 'Semua', searchQuery = '';
 
@@ -40,7 +32,7 @@ function scrollToSearch() {
 }
 
 window.addEventListener('keydown', (e) => {
-  if (e.key === '/' && !e.ctrlKey && !e.metaKey && !e.altKey && !e.isComposing &&
+  if (document.getElementById('theme-search') && e.key === '/' && !e.ctrlKey && !e.metaKey && !e.altKey && !e.isComposing &&
       !document.querySelector('#preview-modal[open]') &&
       !e.target.closest('input, textarea, select, [contenteditable]')) {
     e.preventDefault();
@@ -90,11 +82,27 @@ function closePreviewModal() {
   previewDialog.close();
 }
 
-previewDialog.addEventListener('click', (event) => {
+previewDialog?.addEventListener('click', (event) => {
   if (event.target === previewDialog) closePreviewModal();
 });
-previewDialog.addEventListener('close', () => {
+previewDialog?.addEventListener('close', () => {
   document.body.style.removeProperty('overflow');
+});
+
+const serviceMenu = document.querySelector('.studio-service-menu');
+
+serviceMenu?.addEventListener('click', (event) => {
+  if (event.target.closest('a')) serviceMenu.open = false;
+});
+
+document.addEventListener('click', (event) => {
+  if (serviceMenu?.open && !serviceMenu.contains(event.target)) serviceMenu.open = false;
+});
+
+serviceMenu?.addEventListener('keydown', (event) => {
+  if (event.key !== 'Escape' || !serviceMenu.open) return;
+  serviceMenu.open = false;
+  serviceMenu.querySelector('summary').focus();
 });
 
 if ('IntersectionObserver' in window && !reduceMotion.matches) {
@@ -106,5 +114,5 @@ if ('IntersectionObserver' in window && !reduceMotion.matches) {
     }
   }, { threshold: 0.12 });
 
-  document.querySelectorAll('.studio-service-grid article, .catalog-grid-pattern h2, .theme-card, #alur-kerja h2, #tentang h2, #kontak h2').forEach((item) => observer.observe(item));
+  document.querySelectorAll('.studio-service-grid article, .catalog-grid-pattern h1, .studio-work-teaser h2, .theme-card, #alur-kerja h2, #tentang h2, #kontak h2').forEach((item) => observer.observe(item));
 }
