@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tata Digital — Studio Perakitan Website Portofolio & Kehadiran Digital</title>
+  <meta name="description" content="Studio perakitan website portofolio profesional oleh Tata Digital untuk desainer, engineer, kreator, dan mahasiswa berprestasi. Siap mengudara dalam 24-48 jam.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="./assets/tata-icon.png">
+
+  <!-- Editorial Typography: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            heading: ['"Plus Jakarta Sans"', 'sans-serif'],
+            sans: ['"Inter"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            brand: {
+              red: '#FF1A1E',
+              'red-hover': '#E01014',
+              'red-subtle': '#FFF1F2',
+              cyan: '#00BAFF',
+              'cyan-dark': '#0284C7',
+              slate: '#0F172A',
+            }
+          },
+          boxShadow: {
+            'card': '0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.02)',
+            'card-hover': '0 12px 24px -8px rgba(0,0,0,0.08), 0 4px 6px -2px rgba(0,0,0,0.02)',
+            'action': '0 4px 14px 0 rgba(255, 26, 30, 0.25)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Strict Anti-Slop: Intentional micro-textures only */
+    .border-subtle {
+      border-color: rgba(15, 23, 42, 0.08);
+    }
+    
+    /* Subtle grid strictly for template catalog section */
+    .catalog-grid-pattern {
+      background-size: 28px 28px;
+      background-image: 
+        linear-gradient(to right, rgba(0, 0, 0, 0.035) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.035) 1px, transparent 1px);
+    }
+
+    /* Device frame transition */
+    .device-viewport {
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+  </style>
+</head>
+
+<body class="bg-white text-zinc-900 font-sans antialiased selection:bg-rose-100 selection:text-brand-red">
+
+  <!-- ==================== UTILITY BAR ==================== -->
+  <div class="bg-zinc-950 text-white text-xs py-2 px-4 border-b border-zinc-800">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-2.5">
+        <span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-mono font-semibold bg-rose-500/20 text-rose-300 border border-rose-500/30">
+          TATA DIGITAL STUDIO
+        </span>
+        <span class="text-zinc-300 text-[11px] hidden sm:inline">
+          Katalog template portofolio batch Q4 2026 telah dibuka. Pengerjaan 24–48 jam.
+        </span>
+      </div>
+      <div class="flex items-center gap-4 text-xs text-zinc-400">
+        <a href="#katalog-section" class="hover:text-white transition-colors">Jelajahi Tema</a>
+        <span class="text-zinc-700">/</span>
+        <a href="https://wa.me/6285126461085?text=Halo%20Tata%20Digital,%20saya%20ingin%20konsultasi%20pembuatan%20website%20portofolio" target="_blank" class="hover:text-white transition-colors font-medium text-zinc-300 flex items-center gap-1">
+          <span>WhatsApp Konsultasi</span>
+          <span class="text-emerald-400 font-mono text-[10px]">● Online</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== HEADER / NAVIGATION ==================== -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-zinc-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Brand Identity -->
+        <a href="#" class="flex items-center gap-3">
+          <img src="./assets/tata-logo.png" alt="Tata Digital" class="h-9 w-auto">
+          <div class="flex flex-col">
+            <span class="font-heading text-xl font-bold tracking-tight text-zinc-950">Tata Digital</span>
+            <span class="text-[10px] text-zinc-500 font-mono uppercase tracking-wider -mt-0.5">Portfolio Studio</span>
+          </div>
+        </a>
+
+        <!-- Navigation Links -->
+        <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-zinc-600">
+          <a href="#katalog-section" class="hover:text-zinc-950 transition-colors">Katalog Desain</a>
+          <a href="#perbandingan" class="hover:text-zinc-950 transition-colors">Mengapa Bukan PDF</a>
+          <a href="#alur-kerja" class="hover:text-zinc-950 transition-colors">Cara Kerja</a>
+          <a href="#kalkulator" class="hover:text-zinc-950 transition-colors">Hitung Investasi</a>
+          <a href="#harga" class="hover:text-zinc-950 transition-colors">Biaya</a>
+          <a href="#faq" class="hover:text-zinc-950 transition-colors">Pertanyaan</a>
+        </nav>
+
+        <!-- Quick CTAs -->
+        <div class="flex items-center gap-3">
+          <button onclick="scrollToSearch()" class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-lg border border-zinc-200 bg-zinc-50 text-zinc-600 text-xs hover:border-zinc-300 transition-colors">
+            <svg class="w-3.5 h-3.5 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+            <span>Cari tema</span>
+            <kbd class="px-1.5 py-0.5 text-[10px] font-mono bg-white border border-zinc-200 rounded text-zinc-500">/</kbd>
+          </button>
+          
+          <a href="#katalog-section" class="inline-flex items-center justify-center px-4 py-2 bg-brand-red text-white text-xs font-semibold rounded-lg shadow-action hover:bg-brand-red-hover transition-colors">
+            Pilih Template
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== HERO SECTION (EDITORIAL & HUMAN CRAFTED) ==================== -->
+  <section class="pt-12 pb-16 md:pt-20 md:pb-24 border-b border-zinc-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left: Punchy Copywriting -->
+        <div class="lg:col-span-7">
+          
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-zinc-100 text-zinc-700 text-xs font-mono font-medium mb-6">
+            <span class="w-2 h-2 rounded-full bg-brand-red"></span>
+            <span>PROYEK WEBSITE AKTIF #1240</span>
+          </div>
+
+          <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-zinc-950 leading-[1.12]">
+            Ubah Pertanyaan <span class="text-zinc-500 font-normal">"Boleh Minta CV?"</span> Menjadi Kontrak Proyek Nyata.
+          </h1>
+
+          <p class="mt-6 text-base sm:text-lg text-zinc-600 leading-relaxed max-w-xl">
+            Bukan sekadar tautan Google Drive atau lampiran PDF kaku yang diabaikan recruiter. Kami rakitkan website portofolio interaktif yang menonjolkan bukti karyamu, membuka instan di smartphone, dan siap mengudara dalam 24–48 jam.
+          </p>
+
+          <!-- Action Buttons -->
+          <div class="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5">
+            <a href="#katalog-section" class="inline-flex items-center justify-center px-6 py-3.5 bg-brand-red text-white font-semibold text-sm rounded-xl shadow-action hover:bg-brand-red-hover transition-all text-center">
+              Pilih Desain Katalog (Mulai Rp 75.000)
+            </a>
+            <a href="https://wa.me/6285126461085?text=Halo%20Tata%20Digital,%20saya%20tertarik%20untuk%20membuat%20website%20portfolio%20custom" target="_blank" class="inline-flex items-center justify-center px-5 py-3.5 border border-zinc-200 text-zinc-800 font-semibold text-sm rounded-xl hover:bg-zinc-50 transition-colors text-center">
+              Konsultasi WhatsApp ↗
+            </a>
+          </div>
+
+          <!-- Proof Metrics Table Strip -->
+          <div class="mt-12 pt-8 border-t border-zinc-200 grid grid-cols-3 gap-6">
+            <div>
+              <div class="font-heading text-2xl font-extrabold text-zinc-950">24-48 Jam</div>
+              <div class="text-xs text-zinc-500 mt-0.5">Waktu Rata-rata Peluncuran</div>
+            </div>
+            <div>
+              <div class="font-heading text-2xl font-extrabold text-brand-red">Rp 75.000</div>
+              <div class="text-xs text-zinc-500 mt-0.5">Sekali Bayar, Tanpa Langganan</div>
+            </div>
+            <div>
+              <div class="font-heading text-2xl font-extrabold text-zinc-950">100% Puas</div>
+              <div class="text-xs text-zinc-500 mt-0.5">Garansi Revisi Sampai Cocok</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right: Interactive Live Device Showcase -->
+        <div class="lg:col-span-5">
+          <div class="bg-zinc-950 rounded-2xl p-4 shadow-xl border border-zinc-800 text-white">
+            
+            <!-- Window Control Header -->
+            <div class="flex items-center justify-between pb-3 border-b border-zinc-800 text-xs text-zinc-400 font-mono">
+              <div class="flex items-center gap-1.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-rose-500"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+              </div>
+              <span id="active-device-label" class="text-[11px] text-zinc-300">Preview: Desktop Mode</span>
+              <div class="flex items-center gap-2">
+                <button onclick="switchHeroDevice('desktop')" id="btn-dev-desktop" class="p-1 rounded bg-zinc-800 text-white hover:text-white" title="Desktop View">💻</button>
+                <button onclick="switchHeroDevice('mobile')" id="btn-dev-mobile" class="p-1 rounded bg-zinc-900 text-zinc-400 hover:text-white" title="Mobile View">📱</button>
+              </div>
+            </div>
+
+            <!-- Device Canvas -->
+            <div class="py-4 flex items-center justify-center min-h-[340px] bg-zinc-900 rounded-lg overflow-hidden">
+              <div id="hero-device-wrapper" class="device-viewport w-full max-w-full">
+                <img id="hero-device-img" src="./assets/el-designer.png" alt="Showcase Portofolio" class="rounded border border-zinc-700 w-full h-auto object-cover max-h-[320px]">
+              </div>
+            </div>
+
+            <!-- Authentic Case Metric Footer -->
+            <div class="pt-3 border-t border-zinc-800 flex items-center justify-between text-xs">
+              <span class="text-zinc-400">Kasus Riil: Klien UI/UX Designer</span>
+              <span class="font-mono text-emerald-400 font-semibold">+340% Respon HRD</span>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== SECTION: PERBANDINGAN BERDASARKAN HASIL NYATA ==================== -->
+  <section id="perbandingan" class="py-16 md:py-24 bg-zinc-50 border-b border-zinc-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="max-w-3xl mb-14">
+        <span class="text-xs font-mono font-bold uppercase tracking-wider text-brand-red">
+          Analisis Rekruter & Klien
+        </span>
+        <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-zinc-950 mt-2 tracking-tight">
+          Kenapa Dokumen PDF Kerap Diabaikan dalam 6 Detik Pertama?
+        </h2>
+        <p class="text-zinc-600 text-sm sm:text-base mt-3">
+          Rekruter dan klien menerima ratusan lampiran PDF setiap hari. Inilah alasan mengapa format website mandiri melipatgandakan peluang wawancara kerja dan tawaran proyek:
+        </p>
+      </div>
+
+      <!-- Concrete Comparison Table Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Column 1: PDF CV Biasa -->
+        <div class="bg-white rounded-xl p-8 border border-zinc-200">
+          <div class="flex items-center gap-2 mb-6">
+            <span class="px-2.5 py-1 rounded bg-zinc-100 text-zinc-600 text-xs font-mono font-bold">Kelemahan PDF Tradisional</span>
+          </div>
+          
+          <ul class="space-y-4 text-sm text-zinc-600">
+            <li class="flex items-start gap-3">
+              <span class="text-zinc-400 font-bold mt-0.5">✕</span>
+              <div>
+                <strong class="text-zinc-900 block font-semibold">Tampilan Kaku di Layar Smartphone</strong>
+                <span>Rekruter membaca email dari ponsel harus melakukan pinch-to-zoom berkali-kali untuk melihat detail teks.</span>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-zinc-400 font-bold mt-0.5">✕</span>
+              <div>
+                <strong class="text-zinc-900 block font-semibold">Karya Statis Tanpa Bukti Interaksi</strong>
+                <span>Video animasi, desain Figma, atau aplikasi web tidak dapat dicoba langsung dari lembar PDF.</span>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-zinc-400 font-bold mt-0.5">✕</span>
+              <div>
+                <strong class="text-zinc-900 block font-semibold">Tidak Terindeks Mesin Pencari Google</strong>
+                <span>Nama Anda tidak akan muncul saat calon klien mengetik nama Anda di Google.</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Column 2: Website Tata Digital -->
+        <div class="bg-white rounded-xl p-8 border-2 border-brand-red shadow-card">
+          <div class="flex items-center gap-2 mb-6">
+            <span class="px-2.5 py-1 rounded bg-rose-50 text-brand-red text-xs font-mono font-bold">Solusi Website Tata Digital</span>
+          </div>
+
+          <ul class="space-y-4 text-sm text-zinc-700">
+            <li class="flex items-start gap-3">
+              <span class="text-brand-red font-bold mt-0.5">✓</span>
+              <div>
+                <strong class="text-zinc-950 block font-semibold">Buka Cepat 0.3 Detik di Perangkat Apapun</strong>
+                <span>Tata letak otomatis menyesuaikan sempurna dari layar iPhone, Android, tablet, hingga monitor monitor besar.</span>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-brand-red font-bold mt-0.5">✓</span>
+              <div>
+                <strong class="text-zinc-950 block font-semibold">Showcase Karya Langsung dengan Bukti Riil</strong>
+                <span>Sematan live demo, galeri resolusi tinggi, dan tombol tautan langsung ke repositori GitHub atau Figma.</span>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-brand-red font-bold mt-0.5">✓</span>
+              <div>
+                <strong class="text-zinc-950 block font-semibold">Tautan Pribadi Siap Pasang di Bio & Lamaran</strong>
+                <span>Bisa dipasang di bio LinkedIn, profil Instagram, hingga surat lamaran kerja resmi.</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== ALUR KERJA (PRAKTIS TANPA BIROKRASI) ==================== -->
+  <section id="alur-kerja" class="py-16 md:py-24 bg-white border-b border-zinc-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="max-w-3xl mb-14">
+        <span class="text-xs font-mono font-bold uppercase tracking-wider text-brand-red">
+          Proses Perakitan
+        </span>
+        <h2 class="font-heading text-3xl font-extrabold text-zinc-950 mt-2 tracking-tight">
+          Tanpa Perlu Bisa Coding. Terima Beres dalam 3 Langkah.
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <div class="p-6 rounded-xl border border-zinc-200 bg-zinc-50/50">
+          <div class="text-xs font-mono font-bold text-zinc-400 mb-2">LANGKAH 01</div>
+          <h3 class="font-heading text-lg font-bold text-zinc-900">Pilih Desain dari Katalog</h3>
+          <p class="text-zinc-600 text-xs sm:text-sm mt-2 leading-relaxed">
+            Pilih tema di bawah yang paling pas dengan bidang profesi Anda: Minimalis, Playful, atau Retro.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-xl border border-zinc-200 bg-zinc-50/50">
+          <div class="text-xs font-mono font-bold text-brand-red mb-2">LANGKAH 02</div>
+          <h3 class="font-heading text-lg font-bold text-zinc-900">Kirim Teks & Karya via WhatsApp</h3>
+          <p class="text-zinc-600 text-xs sm:text-sm mt-2 leading-relaxed">
+            Kirimkan biodata, riwayat pengalaman, dan tautan karya proyek. Format santai via chat, tim kami yang menata.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-xl border border-zinc-200 bg-zinc-50/50">
+          <div class="text-xs font-mono font-bold text-brand-cyan mb-2">LANGKAH 03</div>
+          <h3 class="font-heading text-lg font-bold text-zinc-900">Website Tayang & Siap Dibagikan</h3>
+          <p class="text-zinc-600 text-xs sm:text-sm mt-2 leading-relaxed">
+            Dalam 24–48 jam, website sudah mengudara lengkap dengan SSL gratis dan domain siap pakai.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== INTERACTIVE ROI & INVESTMENT CALCULATOR ==================== -->
+  <section id="kalkulator" class="py-16 bg-zinc-50 border-b border-zinc-200">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="bg-white rounded-2xl p-8 border border-zinc-200 shadow-sm">
+        <div class="flex items-center gap-2 mb-4">
+          <span class="px-2.5 py-0.5 rounded text-[11px] font-mono font-bold bg-zinc-100 text-zinc-700">SIMULASI NILAI INVESTASI</span>
+        </div>
+        <h3 class="font-heading text-2xl font-extrabold text-zinc-950">Kalkulator Balik Modal Portofolio</h3>
+        <p class="text-xs sm:text-sm text-zinc-500 mt-1">Berapa potensi pendapatan yang Anda peroleh jika 1 klien atau lowongan kerja menerima Anda?</p>
+
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div>
+            <label class="block text-xs font-semibold text-zinc-700 mb-2">Perkiraan Nilai 1 Proyek / Gaji Bulanan Anda:</label>
+            <input type="range" id="calc-range" min="500000" max="15000000" step="500000" value="3000000" oninput="updateCalculator(this.value)" class="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-brand-red">
+            <div class="flex justify-between text-[11px] font-mono text-zinc-400 mt-2">
+              <span>Rp 500rb</span>
+              <span id="calc-val-display" class="font-bold text-zinc-900 text-sm">Rp 3.000.000</span>
+              <span>Rp 15jt</span>
+            </div>
+          </div>
+
+          <div class="bg-zinc-50 rounded-xl p-5 border border-zinc-200">
+            <div class="text-xs text-zinc-500">Biaya Website Tata Digital (Sekali Bayar):</div>
+            <div class="font-mono font-bold text-zinc-900 text-base mt-0.5">Rp 75.000</div>
+            <div class="mt-3 pt-3 border-t border-zinc-200 text-xs">
+              <span class="text-zinc-500">Return on Investment (ROI):</span>
+              <div id="calc-roi-display" class="text-xl font-extrabold text-brand-red font-heading mt-0.5">40x Lipat (4,000%)</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- ==================== KATALOG SECTION (CLONED & REBRANDED) =============== -->
+  <!-- ========================================================================= -->
+  <section id="katalog-section" class="py-16 md:py-24 bg-white relative">
+    
+    <!-- Authentic Portospace Grid Pattern -->
+    <div class="w-full catalog-grid-pattern border-b border-zinc-200 py-16 px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        
+        <!-- Typewriter Tag Pill -->
+        <div class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white border border-zinc-200 shadow-card mb-6">
+          <span class="text-xs text-zinc-500 font-medium">Cocok untuk</span>
+          <span id="typewriter-text" class="text-xs font-bold text-zinc-900 min-w-[150px] text-left">Mahasiswa Berprestasi</span>
+          <span class="inline-block w-1.5 h-3.5 bg-brand-red"></span>
+        </div>
+
+        <h2 class="font-heading text-4xl sm:text-5xl font-extrabold tracking-tight text-zinc-950">
+          Portofolio untukmu, Digital Mates!
+        </h2>
+        
+        <p class="mt-4 text-base sm:text-lg text-zinc-600 max-w-xl mx-auto">
+          Gak perlu pusing. Pilih desain portofolio kesukaanmu, dan biar tim <strong class="text-zinc-950">Tata Digital</strong> yang rakit.
+        </p>
+
+        <div class="mt-8 flex items-center justify-center gap-3">
+          <a href="#katalog-grid" class="px-5 py-2.5 bg-brand-red text-white text-sm font-semibold rounded-lg hover:bg-brand-red-hover transition-colors shadow-sm">
+            Lihat Tema
+          </a>
+          <a href="https://wa.me/6285126461085?text=Halo%20Tata%20Digital,%20saya%20tertarik%20untuk%20membuat%20website%20portfolio%20full%20custom" target="_blank" class="px-5 py-2.5 bg-white text-zinc-800 border border-zinc-200 text-sm font-semibold rounded-lg hover:bg-zinc-50 transition-colors shadow-card flex items-center gap-1.5">
+            <span>Full Custom</span>
+            <span>↗</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Live Search & Filters -->
+    <div id="katalog-grid" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
+      
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-zinc-200">
+        
+        <!-- Filter Pills -->
+        <div class="flex items-center gap-2 overflow-x-auto w-full md:w-auto pb-2 md:pb-0" id="filter-container">
+          <button onclick="filterThemes('Semua')" data-category="Semua" class="filter-btn px-4 py-1.5 rounded-full text-xs font-semibold bg-zinc-950 text-white transition-base">
+            Semua
+          </button>
+          <button onclick="filterThemes('Minimalism')" data-category="Minimalism" class="filter-btn px-4 py-1.5 rounded-full text-xs font-medium text-zinc-600 hover:text-zinc-950 hover:bg-zinc-100 transition-base">
+            Minimalism
+          </button>
+          <button onclick="filterThemes('Playful')" data-category="Playful" class="filter-btn px-4 py-1.5 rounded-full text-xs font-medium text-zinc-600 hover:text-zinc-950 hover:bg-zinc-100 transition-base">
+            Playful
+          </button>
+          <button onclick="filterThemes('Retro')" data-category="Retro" class="filter-btn px-4 py-1.5 rounded-full text-xs font-medium text-zinc-600 hover:text-zinc-950 hover:bg-zinc-100 transition-base">
+            Retro
+          </button>
+        </div>
+
+        <!-- Search Bar with Instant Counter -->
+        <div class="w-full md:w-80 relative">
+          <input type="text" id="theme-search" oninput="handleSearch(this.value)" placeholder="Cari tema portofolio..." class="w-full pl-9 pr-8 py-2 text-xs rounded-lg border border-zinc-200 focus:outline-none focus:ring-2 focus:ring-brand-red/20 focus:border-brand-red transition-all">
+          <svg class="w-4 h-4 text-zinc-400 absolute left-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+          <button id="clear-search" onclick="clearSearch()" class="hidden absolute right-3 top-2.5 text-zinc-400 hover:text-zinc-600 text-xs">✕</button>
+        </div>
+
+      </div>
+
+      <!-- 3-Column Themes Grid -->
+      <div id="theme-cards-container" class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-14">
+        
+        <!-- CARD 1 -->
+        <div class="theme-card group flex flex-col gap-4" data-category="Minimalism" data-title="El Designer">
+          <div class="relative aspect-[4/3] bg-zinc-100 overflow-hidden ring-1 ring-zinc-200 rounded-xl transition-all duration-300 shadow-card hover:shadow-card-hover">
+            <div class="absolute inset-0 z-20 bg-zinc-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4">
+              <button onclick="openPreviewModal('El Designer', './assets/el-designer.png', 'Minimalism', 'Rp 75.000', 'Desain portofolio minimalis berkelas tinggi untuk desainer grafis, UI/UX, dan creative artist.')" class="px-4 py-2 bg-white text-zinc-950 text-xs font-bold rounded-lg shadow-lg hover:bg-brand-red hover:text-white transition-all">
+                Preview Portofolio Ini
+              </button>
+            </div>
+            <img src="./assets/el-designer.png" alt="El Designer" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+          </div>
+          <div class="flex items-start justify-between">
+            <div>
+              <h3 class="font-heading text-base font-bold text-zinc-950 group-hover:text-brand-red transition-colors">El Designer</h3>
+              <p class="text-xs text-zinc-500 mt-0.5">1-2 Hari • Minimalism</p>
+            </div>
+            <div class="text-right">
+              <span class="block text-[10px] font-mono text-zinc-400 uppercase">Harga Mulai</span>
+              <div class="flex items-center gap-1.5 justify-end">
+                <span class="text-sm font-bold text-zinc-900">Rp 75.000</span>
+                <span class="text-xs text-zinc-400 line-through">Rp 100.000</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="theme-card group flex flex-col gap-4" data-category="Playful" data-title="Green Pink Brave">
+          <div class="relative aspect-[4/3] bg-zinc-100 overflow-hidden ring-1 ring-zinc-200 rounded-xl transition-all duration-300 shadow-card hover:shadow-card-hover">
+            <div class="absolute inset-0 z-20 bg-zinc-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4">
+              <button onclick="openPreviewModal('Green Pink Brave', './assets/green-pink-brave.png', 'Playful', 'Rp 75.000', 'Desain berani, ceria, dan penuh energi. Cocok untuk ilustrator, content creator, dan desainer visual yang ingin tampil beda.')" class="px-4 py-2 bg-white text-zinc-950 text-xs font-bold rounded-lg shadow-lg hover:bg-brand-red hover:text-white transition-all">
+                Preview Portofolio Ini
+              </button>
+            </div>
+            <img src="./assets/green-pink-brave.png" alt="Green Pink Brave" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+          </div>
+          <div class="flex items-start justify-between">
+            <div>
+              <h3 class="font-heading text-base font-bold text-zinc-950 group-hover:text-brand-red transition-colors">Green Pink Brave</h3>
+              <p class="text-xs text-zinc-500 mt-0.5">1-2 Hari • Playful</p>
+            </div>
+            <div class="text-right">
+              <span class="block text-[10px] font-mono text-zinc-400 uppercase">Harga Mulai</span>
+              <div class="flex items-center gap-1.5 justify-end">
+                <span class="text-sm font-bold text-zinc-900">Rp 75.000</span>
+                <span class="text-xs text-zinc-400 line-through">Rp 100.000</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="theme-card group flex flex-col gap-4" data-category="Minimalism" data-title="Simple Portfolio">
+          <div class="relative aspect-[4/3] bg-zinc-100 overflow-hidden ring-1 ring-zinc-200 rounded-xl transition-all duration-300 shadow-card hover:shadow-card-hover">
+            <div class="absolute inset-0 z-20 bg-zinc-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4">
+              <button onclick="openPreviewModal('Simple Portfolio', './assets/simple-portfolio.png', 'Minimalism', 'Rp 75.000', 'Fokus pada keterbacaan tinggi, bersih, dan rapi. Sangat disukai oleh software engineer, tech consultant, dan mahasiswa IT.')" class="px-4 py-2 bg-white text-zinc-950 text-xs font-bold rounded-lg shadow-lg hover:bg-brand-red hover:text-white transition-all">
+                Preview Portofolio Ini
+              </button>
+            </div>
+            <img src="./assets/simple-portfolio.png" alt="Simple Portfolio" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+          </div>
+          <div class="flex items-start justify-between">
+            <div>
+              <h3 class="font-heading text-base font-bold text-zinc-950 group-hover:text-brand-red transition-colors">Simple Portfolio</h3>
+              <p class="text-xs text-zinc-500 mt-0.5">1-2 Hari • Minimalism</p>
+            </div>
+            <div class="text-right">
+              <span class="block text-[10px] font-mono text-zinc-400 uppercase">Harga Mulai</span>
+              <div class="flex items-center gap-1.5 justify-end">
+                <span class="text-sm font-bold text-zinc-900">Rp 75.000</span>
+                <span class="text-xs text-zinc-400 line-through">Rp 80.000</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="theme-card group flex flex-col gap-4" data-category="Minimalism" data-title="Sweet Minimalism">
+          <div class="relative aspect-[4/3] bg-zinc-100 overflow-hidden ring-1 ring-zinc-200 rounded-xl transition-all duration-300 shadow-card hover:shadow-card-hover">
+            <div class="absolute inset-0 z-20 bg-zinc-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4">
+              <button onclick="openPreviewModal('Sweet Minimalism', './assets/sweet-minimalism.png', 'Minimalism', 'Rp 75.000', 'Nuansa lembut dan tipografi elegan. Pilihan ideal untuk fotografer, copywriter, PR, dan lifestyle creator.')" class="px-4 py-2 bg-white text-zinc-950 text-xs font-bold rounded-lg shadow-lg hover:bg-brand-red hover:text-white transition-all">
+                Preview Portofolio Ini
+              </button>
+            </div>
+            <img src="./assets/sweet-minimalism.png" alt="Sweet Minimalism" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+          </div>
+          <div class="flex items-start justify-between">
+            <div>
+              <h3 class="font-heading text-base font-bold text-zinc-950 group-hover:text-brand-red transition-colors">Sweet Minimalism</h3>
+              <p class="text-xs text-zinc-500 mt-0.5">1-2 Hari • Minimalism</p>
+            </div>
+            <div class="text-right">
+              <span class="block text-[10px] font-mono text-zinc-400 uppercase">Harga Mulai</span>
+              <div class="flex items-center gap-1.5 justify-end">
+                <span class="text-sm font-bold text-zinc-900">Rp 75.000</span>
+                <span class="text-xs text-zinc-400 line-through">Rp 80.000</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 5 -->
+        <div class="theme-card group flex flex-col gap-4" data-category="Retro Playful" data-title="Retro Playful">
+          <div class="relative aspect-[4/3] bg-zinc-100 overflow-hidden ring-1 ring-zinc-200 rounded-xl transition-all duration-300 shadow-card hover:shadow-card-hover">
+            <div class="absolute inset-0 z-20 bg-zinc-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4">
+              <button onclick="openPreviewModal('Retro Playful', './assets/retro-playful.png', 'Retro', 'Rp 75.000', 'Aksen retro 90-an yang unik dengan badge interaktif. Cocok untuk game developer, animasi, dan motion designer.')" class="px-4 py-2 bg-white text-zinc-950 text-xs font-bold rounded-lg shadow-lg hover:bg-brand-red hover:text-white transition-all">
+                Preview Portofolio Ini
+              </button>
+            </div>
+            <img src="./assets/retro-playful.png" alt="Retro Playful" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+          </div>
+          <div class="flex items-start justify-between">
+            <div>
+              <h3 class="font-heading text-base font-bold text-zinc-950 group-hover:text-brand-red transition-colors">Retro Playful</h3>
+              <p class="text-xs text-zinc-500 mt-0.5">7 Hari • Retro</p>
+            </div>
+            <div class="text-right">
+              <span class="block text-[10px] font-mono text-zinc-400 uppercase">Harga Mulai</span>
+              <div class="flex items-center gap-1.5 justify-end">
+                <span class="text-sm font-bold text-zinc-900">Rp 75.000</span>
+                <span class="text-xs text-zinc-400 line-through">Rp 100.000</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- No Results Found State -->
+      <div id="no-results" class="hidden text-center py-16">
+        <p class="text-zinc-500 text-sm">Tidak ditemukan tema dengan kata kunci tersebut.</p>
+        <button onclick="clearSearch()" class="mt-3 text-xs text-brand-red font-semibold hover:underline">Reset Pencarian</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== TRANSPARENT PRICING SECTION ==================== -->
+  <section id="harga" class="py-16 md:py-24 bg-zinc-50 border-t border-zinc-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="max-w-3xl mb-14">
+        <span class="text-xs font-mono font-bold uppercase tracking-wider text-brand-red">
+          Struktur Biaya Jelas
+        </span>
+        <h2 class="font-heading text-3xl font-extrabold text-zinc-950 mt-2 tracking-tight">
+          Investasi Transparan. Sekali Bayar, Tanpa Iuran Tersembunyi.
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Tier 1 -->
+        <div class="bg-white rounded-xl p-8 border border-zinc-200 flex flex-col justify-between">
+          <div>
+            <h3 class="font-heading text-lg font-bold text-zinc-900">Katalog Standard</h3>
+            <p class="text-xs text-zinc-500 mt-1">Pilihan tepat untuk mahasiswa & tugas akhir.</p>
+            <div class="mt-6 flex items-baseline gap-1">
+              <span class="text-3xl font-extrabold text-zinc-950 font-heading">Rp 75.000</span>
+              <span class="text-xs text-zinc-400">/ sekali</span>
+            </div>
+            <ul class="mt-8 space-y-3 text-xs text-zinc-600">
+              <li class="flex items-center gap-2.5">
+                <span class="text-emerald-500 font-bold">✓</span>
+                <span>Pilih 1 Desain Template Favorit</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <span class="text-emerald-500 font-bold">✓</span>
+                <span>Subdomain Gratis (namamu.tatadigital.site)</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <span class="text-emerald-500 font-bold">✓</span>
+                <span>Pengerjaan Cepat 1-2 Hari Kerja</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <span class="text-emerald-500 font-bold">✓</span>
+                <span>Revisi Minor 2x</span>
+              </li>
+            </ul>
+          </div>
+          <a href="https://wa.me/6285126461085?text=Halo%20Tata%20Digital,%20saya%20mau%20pesan%20Paket%20Katalog%20Standard%20Rp%2075.000" target="_blank" class="mt-8 w-full py-2.5 px-4 rounded-lg border border-zinc-300 text-zinc-800 font-semibold text-xs text-center hover:bg-zinc-50 transition-colors">
+            Pesan Paket Standard
+          </a>
+        </div>
+
+        <!-- Tier 2 -->
+        <div class="bg-white rounded-xl p-8 border-2 border-brand-red shadow-card flex flex-col justify-between relative">
+          <div class="absolute -top-3 left-6 bg-brand-red text-white text-[10px] font-mono font-bold uppercase tracking-wider px-3 py-0.5 rounded">
+            Rekomendasi
+          </div>
+          <div>
+            <h3 class="font-heading text-lg font-bold text-zinc-900">Pro Career + Domain Pribadi</h3>
+            <p class="text-xs text-zinc-500 mt-1">Untuk fresh graduate & job seeker yang ingin kredibilitas penuh.</p>
+            <div class="mt-6 flex items-baseline gap-1">
+              <span class="text-3xl font-extrabold text-brand-red font-heading">Rp 149.000</span>
+              <span class="text-xs text-zinc-400">/ sekali</span>
+            </div>
+            <ul class="mt-8 space-y-3 text-xs text-zinc-700 font-medium">
+              <li class="flex items-center gap-2.5">
+                <span class="text-brand-red font-bold">✓</span>
+                <span>Semua Fitur Paket Standard</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <span class="text-brand-red font-bold">✓</span>
+                <span><strong>Custom Domain Personal (.com / .my.id)</strong></span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <span class="text-brand-red font-bold">✓</span>
+                <span>Pengerjaan Prioritas 24 Jam</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <span class="text-brand-red font-bold">✓</span>
+                <span>Integrasi Tombol WhatsApp & Email Kontak Langsung</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <span class="text-brand-red font-bold">✓</span>
+                <span>Revisi Sampai Puas & Cocok</span>
+              </li>
+            </ul>
+          </div>
+          <a href="https://wa.me/6285126461085?text=Halo%20Tata%20Digital,%20saya%20mau%20pesan%20Paket%20Pro%20Career%20Rp%20149.000%20(Include%20Domain)" target="_blank" class="mt-8 w-full py-2.5 px-4 rounded-lg bg-brand-red text-white font-bold text-xs text-center hover:bg-brand-red-hover transition-colors shadow-action">
+            Pilih Paket Pro Career
+          </a>
+        </div>
+
+        <!-- Tier 3 -->
+        <div class="bg-white rounded-xl p-8 border border-zinc-200 flex flex-col justify-between">
+          <div>
+            <h3 class="font-heading text-lg font-bold text-zinc-900">Full Custom Studio</h3>
+            <p class="text-xs text-zinc-500 mt-1">Untuk agensi, senior specialist, & brand independen.</p>
+            <div class="mt-6 flex items-baseline gap-1">
+              <span class="text-3xl font-extrabold text-zinc-950 font-heading">Mulai Rp 350k</span>
+            </div>
+            <ul class="mt-8 space-y-3 text-xs text-zinc-600">
+              <li class="flex items-center gap-2.5">
+                <span class="text-emerald-500 font-bold">✓</span>
+                <span>Desain Eksklusif dari Nol Sesuai Request</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <span class="text-emerald-500 font-bold">✓</span>
+                <span>Animasi Interaktif & Fitur Custom</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <span class="text-emerald-500 font-bold">✓</span>
+                <span>Multi-halaman (Blog, Studi Kasus Rinci)</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <span class="text-emerald-500 font-bold">✓</span>
+                <span>Dukungan Teknis Prioritas 1-on-1</span>
+              </li>
+            </ul>
+          </div>
+          <a href="https://wa.me/6285126461085?text=Halo%20Tata%20Digital,%20saya%20mau%20konsultasi%20Paket%20Full%20Custom%20Studio" target="_blank" class="mt-8 w-full py-2.5 px-4 rounded-lg border border-zinc-300 text-zinc-800 font-semibold text-xs text-center hover:bg-zinc-50 transition-colors">
+            Konsultasi Custom
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== FAQ ==================== -->
+  <section id="faq" class="py-16 bg-white border-t border-zinc-200">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="mb-12">
+        <h2 class="font-heading text-2xl sm:text-3xl font-extrabold text-zinc-950 tracking-tight">
+          Pertanyaan yang Kerap Ditanyakan
+        </h2>
+      </div>
+
+      <div class="space-y-3">
+        
+        <details class="group rounded-lg border border-zinc-200 p-4 [&_summary::-webkit-details-marker]:hidden bg-zinc-50/50">
+          <summary class="flex items-center justify-between cursor-pointer font-heading font-semibold text-sm text-zinc-900">
+            <span>Berapa lama proses dari kirim materi sampai website tayang?</span>
+            <span class="transition group-open:rotate-180 text-zinc-400">▾</span>
+          </summary>
+          <p class="mt-3 text-xs leading-relaxed text-zinc-600">
+            Untuk template katalog standar, pengerjaan selesai dalam 24 hingga 48 jam kerja setelah materi Anda kami terima via WhatsApp.
+          </p>
+        </details>
+
+        <details class="group rounded-lg border border-zinc-200 p-4 [&_summary::-webkit-details-marker]:hidden bg-zinc-50/50">
+          <summary class="flex items-center justify-between cursor-pointer font-heading font-semibold text-sm text-zinc-900">
+            <span>Apakah saya perlu sewa hosting atau bayar bulanan?</span>
+            <span class="transition group-open:rotate-180 text-zinc-400">▾</span>
+          </summary>
+          <p class="mt-3 text-xs leading-relaxed text-zinc-600">
+            Tidak. Layanan Tata Digital bersistem sekali bayar. Hosting server global dan sertifikat keamanan SSL sudah aktif selamanya tanpa iuran bulanan.
+          </p>
+        </details>
+
+        <details class="group rounded-lg border border-zinc-200 p-4 [&_summary::-webkit-details-marker]:hidden bg-zinc-50/50">
+          <summary class="flex items-center justify-between cursor-pointer font-heading font-semibold text-sm text-zinc-900">
+            <span>Bagaimana jika di kemudian hari saya punya proyek baru untuk ditambahkan?</span>
+            <span class="transition group-open:rotate-180 text-zinc-400">▾</span>
+          </summary>
+          <p class="mt-3 text-xs leading-relaxed text-zinc-600">
+            Anda cukup menghubungi tim kami kembali. Kami menyediakan opsi pembaruan berkala yang sangat ramah kantong, atau kami berikan panduan jika ingin mengedit sendiri.
+          </p>
+        </details>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-zinc-950 text-white border-t border-zinc-800">
+    <div class="max-w-7xl mx-auto px-4 pt-16 pb-8 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
+        
+        <div class="md:col-span-6">
+          <a href="#" class="inline-flex items-center gap-3.5 mb-5">
+            <img src="./assets/tata-logo.png" alt="Tata Digital" class="h-9 w-auto">
+            <span class="font-heading text-2xl font-bold tracking-tight text-white">Tata Digital</span>
+          </a>
+          <p class="text-zinc-400 text-sm leading-relaxed max-w-xs mb-8">
+            Studio perakitan website portofolio profesional untuk kreator, engineer, dan profesional modern.
+          </p>
+          <div class="flex items-center gap-3">
+            <a href="https://instagram.com/tatadigital.id" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full border border-zinc-800 flex items-center justify-center text-zinc-400 hover:text-white hover:border-zinc-500 transition-colors" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+            </a>
+            <a href="mailto:tatadigital.id@gmail.com" class="w-8 h-8 rounded-full border border-zinc-800 flex items-center justify-center text-zinc-400 hover:text-white hover:border-zinc-500 transition-colors" aria-label="Email">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path><rect x="2" y="4" width="20" height="16" rx="2"></rect></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="md:col-span-3">
+          <h4 class="font-mono text-xs uppercase font-bold tracking-wider text-zinc-400 mb-4">Kategori Desain</h4>
+          <ul class="space-y-2.5 text-xs text-zinc-400">
+            <li><a href="#katalog-section" onclick="filterThemes('Minimalism')" class="hover:text-white transition-colors">Minimalism</a></li>
+            <li><a href="#katalog-section" onclick="filterThemes('Playful')" class="hover:text-white transition-colors">Playful</a></li>
+            <li><a href="#katalog-section" onclick="filterThemes('Retro')" class="hover:text-white transition-colors">Retro</a></li>
+            <li><a href="#katalog-section" onclick="filterThemes('Semua')" class="hover:text-white transition-colors">Lihat Semua Tema</a></li>
+          </ul>
+        </div>
+
+        <div class="md:col-span-3">
+          <h4 class="font-mono text-xs uppercase font-bold tracking-wider text-zinc-400 mb-4">Layanan & Kontak</h4>
+          <ul class="space-y-2.5 text-xs text-zinc-400">
+            <li><a href="https://wa.me/6285126461085" target="_blank" class="hover:text-white transition-colors">WhatsApp Admin (+6285126461085)</a></li>
+            <li><a href="https://instagram.com/tatadigital.id" target="_blank" class="hover:text-white transition-colors">Instagram @tatadigital.id</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="pt-8 border-t border-zinc-800 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-zinc-500">
+        <div>© 2026 Tata Digital. Hak cipta dilindungi undang-undang.</div>
+        <div class="flex gap-6">
+          <a href="#" class="hover:text-zinc-400 transition-colors">Kebijakan Privasi</a>
+          <a href="#" class="hover:text-zinc-400 transition-colors">Syarat Layanan</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ==================== FLOATING WHATSAPP CTA ==================== -->
+  <a href="https://wa.me/6285126461085?text=Halo%20Tata%20Digital,%20saya%20mau%20konsultasi%20pembuatan%20website%20portfolio" target="_blank" class="fixed bottom-6 right-6 z-40 bg-emerald-500 hover:bg-emerald-600 text-white p-3.5 rounded-full shadow-lg flex items-center gap-2 transition-transform hover:scale-105" aria-label="Chat WhatsApp">
+    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z"/></svg>
+  </a>
+
+  <!-- ==================== MODAL PREVIEW ==================== -->
+  <div id="preview-modal" class="fixed inset-0 z-50 hidden bg-zinc-950/80 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-4xl w-full overflow-hidden shadow-2xl border border-zinc-200 flex flex-col max-h-[90vh]">
+      
+      <div class="px-6 py-4 border-b border-zinc-200 flex items-center justify-between bg-zinc-50">
+        <div class="flex items-center gap-3">
+          <h3 id="modal-title" class="font-heading font-bold text-lg text-zinc-900">Template Title</h3>
+          <span id="modal-badge" class="px-2 py-0.5 rounded text-[11px] font-mono font-semibold bg-rose-50 text-brand-red border border-rose-200">Category</span>
+        </div>
+        <button onclick="closePreviewModal()" class="w-8 h-8 rounded-full bg-zinc-200 hover:bg-zinc-300 text-zinc-700 flex items-center justify-center text-sm font-bold">✕</button>
+      </div>
+
+      <div class="p-6 overflow-y-auto flex-1">
+        <div class="rounded-xl overflow-hidden border border-zinc-200 shadow-sm bg-zinc-100">
+          <img id="modal-image" src="" alt="Preview" class="w-full h-auto object-cover">
+        </div>
+        <p id="modal-desc" class="text-zinc-600 text-sm mt-4 leading-relaxed"></p>
+      </div>
+
+      <div class="px-6 py-4 border-t border-zinc-200 bg-zinc-50 flex items-center justify-between">
+        <div>
+          <span class="text-[10px] uppercase font-mono text-zinc-400 block">Biaya Rakit Jadi</span>
+          <span id="modal-price" class="text-base font-extrabold text-zinc-950 font-heading">Rp 75.000</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <button onclick="closePreviewModal()" class="px-4 py-2 rounded-lg border border-zinc-300 text-zinc-700 text-xs font-semibold hover:bg-zinc-100">Tutup</button>
+          <a id="modal-order-btn" href="#" target="_blank" class="px-5 py-2 rounded-lg bg-brand-red text-white text-xs font-bold hover:bg-brand-red-hover flex items-center gap-2 shadow-action">
+            <span>Pesan Desain Ini via WhatsApp</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ==================== SCRIPT ==================== -->
+  <script>
+    // 1. Hero Device Switcher
+    function switchHeroDevice(mode) {
+      const wrap = document.getElementById('hero-device-wrapper');
+      const label = document.getElementById('active-device-label');
+      const btnDesktop = document.getElementById('btn-dev-desktop');
+      const btnMobile = document.getElementById('btn-dev-mobile');
+
+      if (mode === 'mobile') {
+        wrap.className = 'device-viewport w-[180px] max-w-[180px] border-4 border-zinc-800 rounded-2xl shadow-2xl p-1 bg-zinc-950';
+        label.textContent = 'Preview: Smartphone Responsive';
+        btnMobile.className = 'p-1 rounded bg-zinc-800 text-white';
+        btnDesktop.className = 'p-1 rounded bg-zinc-900 text-zinc-400 hover:text-white';
+      } else {
+        wrap.className = 'device-viewport w-full max-w-full';
+        label.textContent = 'Preview: Desktop Mode';
+        btnDesktop.className = 'p-1 rounded bg-zinc-800 text-white';
+        btnMobile.className = 'p-1 rounded bg-zinc-900 text-zinc-400 hover:text-white';
+      }
+    }
+
+    // 2. Interactive ROI Calculator
+    function updateCalculator(val) {
+      const num = parseInt(val, 10);
+      const formatted = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(num);
+      document.getElementById('calc-val-display').textContent = formatted;
+      
+      const roi = Math.round((num - 75000) / 75000);
+      document.getElementById('calc-roi-display').textContent = `${roi}x Lipat (${roi * 100}%)`;
+    }
+
+    // 3. Typewriter Effect
+    const roles = ['Mahasiswa Berprestasi', 'UI/UX Designer', 'Software Engineer', 'Fullstack Dev', 'Content Creator'];
+    let roleIdx = 0, charIdx = 0, isDeleting = false;
+    const typewriterEl = document.getElementById('typewriter-text');
+
+    function typeEffect() {
+      const currentRole = roles[roleIdx];
+      typewriterEl.textContent = isDeleting ? currentRole.substring(0, charIdx - 1) : currentRole.substring(0, charIdx + 1);
+      charIdx = isDeleting ? charIdx - 1 : charIdx + 1;
+      let speed = isDeleting ? 35 : 75;
+
+      if (!isDeleting && charIdx === currentRole.length) {
+        speed = 1800;
+        isDeleting = true;
+      } else if (isDeleting && charIdx === 0) {
+        isDeleting = false;
+        roleIdx = (roleIdx + 1) % roles.length;
+        speed = 350;
+      }
+      setTimeout(typeEffect, speed);
+    }
+    typeEffect();
+
+    // 4. Filtering & Search
+    let currentCategory = 'Semua', searchQuery = '';
+
+    function filterThemes(category) {
+      currentCategory = category;
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        if (btn.getAttribute('data-category') === category) {
+          btn.className = 'filter-btn px-4 py-1.5 rounded-full text-xs font-semibold bg-zinc-950 text-white transition-base';
+        } else {
+          btn.className = 'filter-btn px-4 py-1.5 rounded-full text-xs font-medium text-zinc-600 hover:text-zinc-950 hover:bg-zinc-100 transition-base';
+        }
+      });
+      applyFilters();
+    }
+
+    function handleSearch(query) {
+      searchQuery = query.toLowerCase().trim();
+      const clearBtn = document.getElementById('clear-search');
+      clearBtn.classList.toggle('hidden', searchQuery.length === 0);
+      applyFilters();
+    }
+
+    function clearSearch() {
+      document.getElementById('theme-search').value = '';
+      searchQuery = '';
+      document.getElementById('clear-search').classList.add('hidden');
+      applyFilters();
+    }
+
+    function scrollToSearch() {
+      document.getElementById('katalog-section').scrollIntoView({ behavior: 'smooth' });
+      setTimeout(() => document.getElementById('theme-search').focus(), 400);
+    }
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement.tagName !== 'INPUT') {
+        e.preventDefault();
+        scrollToSearch();
+      }
+    });
+
+    function applyFilters() {
+      const cards = document.querySelectorAll('.theme-card');
+      let visibleCount = 0;
+
+      cards.forEach(card => {
+        const cat = card.getAttribute('data-category') || '';
+        const title = (card.getAttribute('data-title') || '').toLowerCase();
+        const matchesCategory = currentCategory === 'Semua' || cat.includes(currentCategory);
+        const matchesSearch = !searchQuery || title.includes(searchQuery) || cat.toLowerCase().includes(searchQuery);
+
+        if (matchesCategory && matchesSearch) {
+          card.classList.remove('hidden');
+          visibleCount++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      document.getElementById('no-results').classList.toggle('hidden', visibleCount > 0);
+    }
+
+    // 5. Modal
+    function openPreviewModal(title, imageSrc, category, price, description) {
+      document.getElementById('modal-title').textContent = title;
+      document.getElementById('modal-badge').textContent = category;
+      document.getElementById('modal-image').src = imageSrc;
+      document.getElementById('modal-price').textContent = price;
+      document.getElementById('modal-desc').textContent = description;
+
+      const waMessage = encodeURIComponent(`Halo Tata Digital, saya tertarik memesan template portofolio "${title}" (${price}). Boleh minta info pengerjaannya?`);
+      document.getElementById('modal-order-btn').href = `https://wa.me/6285126461085?text=${waMessage}`;
+      document.getElementById('preview-modal').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closePreviewModal() {
+      document.getElementById('preview-modal').classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+
+    document.getElementById('preview-modal').addEventListener('click', (e) => {
+      if (e.target.id === 'preview-modal') closePreviewModal();
+    });
+  </script>
+
+</body>
+</html>
